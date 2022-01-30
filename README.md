@@ -1,4 +1,4 @@
-# windows-knapp-wamp
+# Knapp WAMP
  
 This tool contains a portable instance of the following programs, ready to use:
 
