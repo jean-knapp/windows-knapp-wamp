@@ -1,0 +1,746 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8A188A28-7621-4E30-9113-0749FC4BB95E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>aetherion_server</RootNamespace>
+    <AssemblyName>Aetherion Server</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v24.2" />
+    <Reference Include="DevExpress.Drawing.v24.2" />
+    <Reference Include="DevExpress.Data.v24.2" />
+    <Reference Include="DevExpress.Dialogs.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v24.2" />
+    <Reference Include="DevExpress.XtraBars.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDialogs.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v24.2" />
+    <Reference Include="DevExpress.XtraGrid.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraWizard.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <Content Include="Resources\**" Visible="true">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>%(RecursiveDir)\%(Filename)%(Extension)</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tools\apache\bin\iconv\" />
+    <Folder Include="Tools\apache\conf\extra\" />
+    <Folder Include="Tools\apache\conf\original\extra\" />
+    <Folder Include="Tools\apache\conf\ssl.crt\" />
+    <Folder Include="Tools\apache\conf\ssl.csr\" />
+    <Folder Include="Tools\apache\conf\ssl.key\" />
+    <Folder Include="Tools\apache\error\include\" />
+    <Folder Include="Tools\apache\icons\small\" />
+    <Folder Include="Tools\apache\include\" />
+    <Folder Include="Tools\apache\lib\" />
+    <Folder Include="Tools\apache\logs\" />
+    <Folder Include="Tools\apache\modules\" />
+    <Folder Include="Tools\htdocs\" />
+    <Folder Include="Tools\mysql\backup\mysql\" />
+    <Folder Include="Tools\mysql\backup\performance_schema\" />
+    <Folder Include="Tools\mysql\backup\phpmyadmin\" />
+    <Folder Include="Tools\mysql\backup\test\" />
+    <Folder Include="Tools\mysql\bin\" />
+    <Folder Include="Tools\mysql\data\mysql\" />
+    <Folder Include="Tools\mysql\data\performance_schema\" />
+    <Folder Include="Tools\mysql\data\phpmyadmin\" />
+    <Folder Include="Tools\mysql\data\test\" />
+    <Folder Include="Tools\mysql\share\charsets\" />
+    <Folder Include="Tools\mysql\share\czech\" />
+    <Folder Include="Tools\mysql\share\danish\" />
+    <Folder Include="Tools\mysql\share\dutch\" />
+    <Folder Include="Tools\mysql\share\english\" />
+    <Folder Include="Tools\mysql\share\estonian\" />
+    <Folder Include="Tools\mysql\share\french\" />
+    <Folder Include="Tools\mysql\share\german\" />
+    <Folder Include="Tools\mysql\share\greek\" />
+    <Folder Include="Tools\mysql\share\hindi\" />
+    <Folder Include="Tools\mysql\share\hungarian\" />
+    <Folder Include="Tools\mysql\share\italian\" />
+    <Folder Include="Tools\mysql\share\japanese\" />
+    <Folder Include="Tools\mysql\share\korean\" />
+    <Folder Include="Tools\mysql\share\norwegian-ny\" />
+    <Folder Include="Tools\mysql\share\norwegian\" />
+    <Folder Include="Tools\mysql\share\polish\" />
+    <Folder Include="Tools\mysql\share\portuguese\" />
+    <Folder Include="Tools\mysql\share\romanian\" />
+    <Folder Include="Tools\mysql\share\russian\" />
+    <Folder Include="Tools\mysql\share\serbian\" />
+    <Folder Include="Tools\mysql\share\slovak\" />
+    <Folder Include="Tools\mysql\share\spanish\" />
+    <Folder Include="Tools\mysql\share\swedish\" />
+    <Folder Include="Tools\mysql\share\ukrainian\" />
+    <Folder Include="Tools\phpmyadmin\examples\" />
+    <Folder Include="Tools\phpmyadmin\js\config\ol\" />
+    <Folder Include="Tools\phpmyadmin\js\dist\codemirror\addon\lint\" />
+    <Folder Include="Tools\phpmyadmin\js\dist\database\" />
+    <Folder Include="Tools\phpmyadmin\js\dist\designer\" />
+    <Folder Include="Tools\phpmyadmin\js\dist\jqplot\plugins\" />
+    <Folder Include="Tools\phpmyadmin\js\dist\server\status\" />
+    <Folder Include="Tools\phpmyadmin\js\dist\setup\" />
+    <Folder Include="Tools\phpmyadmin\js\dist\table\" />
+    <Folder Include="Tools\phpmyadmin\js\dist\transformations\" />
+    <Folder Include="Tools\phpmyadmin\js\src\codemirror\addon\lint\" />
+    <Folder Include="Tools\phpmyadmin\js\src\database\" />
+    <Folder Include="Tools\phpmyadmin\js\src\designer\" />
+    <Folder Include="Tools\phpmyadmin\js\src\jqplot\plugins\" />
+    <Folder Include="Tools\phpmyadmin\js\src\server\status\" />
+    <Folder Include="Tools\phpmyadmin\js\src\setup\" />
+    <Folder Include="Tools\phpmyadmin\js\src\table\" />
+    <Folder Include="Tools\phpmyadmin\js\src\transformations\" />
+    <Folder Include="Tools\phpmyadmin\js\vendor\bootstrap\" />
+    <Folder Include="Tools\phpmyadmin\js\vendor\codemirror\addon\hint\" />
+    <Folder Include="Tools\phpmyadmin\js\vendor\codemirror\addon\lint\" />
+    <Folder Include="Tools\phpmyadmin\js\vendor\codemirror\addon\runmode\" />
+    <Folder Include="Tools\phpmyadmin\js\vendor\codemirror\lib\" />
+    <Folder Include="Tools\phpmyadmin\js\vendor\codemirror\mode\javascript\" />
+    <Folder Include="Tools\phpmyadmin\js\vendor\codemirror\mode\sql\" />
+    <Folder Include="Tools\phpmyadmin\js\vendor\codemirror\mode\xml\" />
+    <Folder Include="Tools\phpmyadmin\js\vendor\jqplot\plugins\" />
+    <Folder Include="Tools\phpmyadmin\js\vendor\jquery\" />
+    <Folder Include="Tools\phpmyadmin\js\vendor\openlayers\theme\" />
+    <Folder Include="Tools\phpmyadmin\libraries\cache\" />
+    <Folder Include="Tools\phpmyadmin\libraries\certs\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Charsets\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Command\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Config\Forms\Page\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Config\Forms\Setup\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Config\Forms\User\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Controllers\Database\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Controllers\Preferences\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Controllers\Server\Status\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Controllers\Setup\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Controllers\Table\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Crypto\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Database\Designer\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Dbal\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Display\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Engines\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Exceptions\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Export\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Gis\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Html\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Import\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Navigation\Nodes\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Plugins\Auth\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Plugins\Export\Helpers\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Plugins\Import\Upload\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Plugins\Schema\Dia\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Plugins\Schema\Eps\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Plugins\Schema\Pdf\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Plugins\Schema\Svg\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Plugins\Transformations\Abs\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Plugins\Transformations\Input\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Plugins\Transformations\Output\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Plugins\TwoFactor\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Properties\Options\Groups\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Properties\Options\Items\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Properties\Plugins\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Providers\ServerVariables\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Query\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Server\Status\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Server\SysInfo\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Setup\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Table\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Twig\I18n\" />
+    <Folder Include="Tools\phpmyadmin\libraries\classes\Utils\" />
+    <Folder Include="Tools\phpmyadmin\setup\lib\" />
+    <Folder Include="Tools\phpmyadmin\sql\" />
+    <Folder Include="Tools\phpmyadmin\templates\columns_definitions\" />
+    <Folder Include="Tools\phpmyadmin\templates\components\" />
+    <Folder Include="Tools\phpmyadmin\templates\config\form_display\" />
+    <Folder Include="Tools\phpmyadmin\templates\console\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\central_columns\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\data_dictionary\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\designer\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\events\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\export\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\import\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\multi_table_query\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\operations\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\privileges\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\qbe\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\routines\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\search\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\structure\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\tracking\" />
+    <Folder Include="Tools\phpmyadmin\templates\database\triggers\" />
+    <Folder Include="Tools\phpmyadmin\templates\display\results\" />
+    <Folder Include="Tools\phpmyadmin\templates\encoding\" />
+    <Folder Include="Tools\phpmyadmin\templates\error\" />
+    <Folder Include="Tools\phpmyadmin\templates\export\" />
+    <Folder Include="Tools\phpmyadmin\templates\home\" />
+    <Folder Include="Tools\phpmyadmin\templates\import\" />
+    <Folder Include="Tools\phpmyadmin\templates\javascript\" />
+    <Folder Include="Tools\phpmyadmin\templates\login\twofactor\" />
+    <Folder Include="Tools\phpmyadmin\templates\menu\" />
+    <Folder Include="Tools\phpmyadmin\templates\navigation\tree\" />
+    <Folder Include="Tools\phpmyadmin\templates\plugins\" />
+    <Folder Include="Tools\phpmyadmin\templates\preferences\forms\" />
+    <Folder Include="Tools\phpmyadmin\templates\preferences\manage\" />
+    <Folder Include="Tools\phpmyadmin\templates\preferences\two_factor\" />
+    <Folder Include="Tools\phpmyadmin\templates\relation\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\binlog\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\collations\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\databases\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\engines\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\export\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\import\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\plugins\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\privileges\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\replication\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\status\advisor\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\status\monitor\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\status\processes\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\status\queries\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\status\status\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\status\variables\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\user_groups\" />
+    <Folder Include="Tools\phpmyadmin\templates\server\variables\" />
+    <Folder Include="Tools\phpmyadmin\templates\setup\config\" />
+    <Folder Include="Tools\phpmyadmin\templates\setup\form\" />
+    <Folder Include="Tools\phpmyadmin\templates\setup\home\" />
+    <Folder Include="Tools\phpmyadmin\templates\setup\servers\" />
+    <Folder Include="Tools\phpmyadmin\templates\sql\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\browse_foreigners\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\chart\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\delete\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\export\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\find_replace\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\gis_visualization\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\import\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\insert\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\maintenance\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\operations\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\partition\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\privileges\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\relation\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\search\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\structure\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\tracking\" />
+    <Folder Include="Tools\phpmyadmin\templates\table\zoom_search\" />
+    <Folder Include="Tools\phpmyadmin\templates\test\gettext\" />
+    <Folder Include="Tools\phpmyadmin\themes\metro\css\" />
+    <Folder Include="Tools\phpmyadmin\themes\metro\img\designer\" />
+    <Folder Include="Tools\phpmyadmin\themes\metro\jquery\images\" />
+    <Folder Include="Tools\phpmyadmin\themes\metro\scss\" />
+    <Folder Include="Tools\phpmyadmin\themes\original\css\" />
+    <Folder Include="Tools\phpmyadmin\themes\original\img\" />
+    <Folder Include="Tools\phpmyadmin\themes\original\jquery\images\" />
+    <Folder Include="Tools\phpmyadmin\themes\original\scss\" />
+    <Folder Include="Tools\phpmyadmin\themes\pmahomme\css\" />
+    <Folder Include="Tools\phpmyadmin\themes\pmahomme\img\designer\" />
+    <Folder Include="Tools\phpmyadmin\themes\pmahomme\jquery\images\" />
+    <Folder Include="Tools\phpmyadmin\themes\pmahomme\scss\" />
+    <Folder Include="Tools\phpmyadmin\vendor\bacon\bacon-qr-code\src\Common\" />
+    <Folder Include="Tools\phpmyadmin\vendor\bacon\bacon-qr-code\src\Encoder\" />
+    <Folder Include="Tools\phpmyadmin\vendor\bacon\bacon-qr-code\src\Exception\" />
+    <Folder Include="Tools\phpmyadmin\vendor\bacon\bacon-qr-code\src\Renderer\Color\" />
+    <Folder Include="Tools\phpmyadmin\vendor\bacon\bacon-qr-code\src\Renderer\Eye\" />
+    <Folder Include="Tools\phpmyadmin\vendor\bacon\bacon-qr-code\src\Renderer\Image\" />
+    <Folder Include="Tools\phpmyadmin\vendor\bacon\bacon-qr-code\src\Renderer\Module\EdgeIterator\" />
+    <Folder Include="Tools\phpmyadmin\vendor\bacon\bacon-qr-code\src\Renderer\Path\" />
+    <Folder Include="Tools\phpmyadmin\vendor\bacon\bacon-qr-code\src\Renderer\RendererStyle\" />
+    <Folder Include="Tools\phpmyadmin\vendor\code-lts\u2f-php-server\src\" />
+    <Folder Include="Tools\phpmyadmin\vendor\composer\" />
+    <Folder Include="Tools\phpmyadmin\vendor\dasprid\enum\src\Exception\" />
+    <Folder Include="Tools\phpmyadmin\vendor\google\recaptcha\src\ReCaptcha\RequestMethod\" />
+    <Folder Include="Tools\phpmyadmin\vendor\nikic\fast-route\src\DataGenerator\" />
+    <Folder Include="Tools\phpmyadmin\vendor\nikic\fast-route\src\Dispatcher\" />
+    <Folder Include="Tools\phpmyadmin\vendor\nikic\fast-route\src\RouteParser\" />
+    <Folder Include="Tools\phpmyadmin\vendor\paragonie\constant_time_encoding\src\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\motranslator\src\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\shapefile\src\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\af\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ar\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ast\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\az\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\be%40latin\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\be\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\bg\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\bn\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\brx\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\br\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\bs\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ca\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ckb\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\cs\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\cy\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\da\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\de\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\el\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\en_GB\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\eo\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\es\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\et\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\eu\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\fa\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\fi\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\fr\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\fy\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\gl\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\gu\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\he\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\hi\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\hr\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\hu\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\hy\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ia\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\id\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\it\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ja\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ka\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\kk\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\kmr\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\km\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\kn\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ko\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ksh\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ky\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\li\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\lt\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\lv\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\mk\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ml\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\mn\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ms\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\nb\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ne\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\nl\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\pa\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\pl\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\pt\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\pt_BR\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\rcf\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ro\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ru\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\si\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\sk\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\sl\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\sq\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\sr%40latin\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\sr\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\sv\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ta\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\te\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\th\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\tk\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\tr\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\tt\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ug\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\uk\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\ur\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\uz%40latin\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\uz\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\vi\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\vls\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\zh_CN\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\locale\zh_TW\LC_MESSAGES\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\src\Components\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\src\Contexts\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\src\Exceptions\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\src\Statements\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\sql-parser\src\Utils\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\twig-i18n-extension\src\Node\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpmyadmin\twig-i18n-extension\src\TokenParser\" />
+    <Folder Include="Tools\phpmyadmin\vendor\phpseclib\phpseclib\phpseclib\Crypt\" />
+    <Folder Include="Tools\phpmyadmin\vendor\pragmarx\google2fa-qrcode\src\" />
+    <Folder Include="Tools\phpmyadmin\vendor\pragmarx\google2fa\src\Exceptions\Contracts\" />
+    <Folder Include="Tools\phpmyadmin\vendor\pragmarx\google2fa\src\Support\" />
+    <Folder Include="Tools\phpmyadmin\vendor\psr\cache\src\" />
+    <Folder Include="Tools\phpmyadmin\vendor\psr\container\src\" />
+    <Folder Include="Tools\phpmyadmin\vendor\psr\log\Psr\Log\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\cache-contracts\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\cache\Adapter\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\cache\DataCollector\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\cache\DependencyInjection\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\cache\Exception\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\cache\Marshaller\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\cache\Simple\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\cache\Traits\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\config\Definition\Builder\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\config\Definition\Dumper\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\config\Definition\Exception\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\config\Exception\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\config\Loader\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\config\Resource\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\config\Util\Exception\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\dependency-injection\Argument\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\dependency-injection\Compiler\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\dependency-injection\Config\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\dependency-injection\Dumper\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\dependency-injection\Exception\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\dependency-injection\Extension\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\dependency-injection\LazyProxy\Instantiator\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\dependency-injection\LazyProxy\PhpDumper\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\dependency-injection\Loader\Configurator\Traits\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\dependency-injection\ParameterBag\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\expression-language\Node\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\filesystem\Exception\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\polyfill-ctype\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\polyfill-mbstring\Resources\unidata\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\polyfill-php72\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\polyfill-php73\Resources\stubs\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\polyfill-php80\Resources\stubs\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\polyfill-php81\Resources\stubs\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\service-contracts\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\var-exporter\Exception\" />
+    <Folder Include="Tools\phpmyadmin\vendor\symfony\var-exporter\Internal\" />
+    <Folder Include="Tools\phpmyadmin\vendor\tecnickcom\tcpdf\config\" />
+    <Folder Include="Tools\phpmyadmin\vendor\tecnickcom\tcpdf\fonts\" />
+    <Folder Include="Tools\phpmyadmin\vendor\tecnickcom\tcpdf\include\barcodes\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Cache\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Error\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Extension\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Loader\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\NodeVisitor\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Node\Expression\Binary\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Node\Expression\Filter\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Node\Expression\Test\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Node\Expression\Unary\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Profiler\Dumper\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Profiler\NodeVisitor\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Profiler\Node\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Sandbox\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Test\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\TokenParser\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\lib\Twig\Util\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\Cache\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\Error\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\Extension\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\Loader\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\NodeVisitor\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\Node\Expression\Binary\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\Node\Expression\Filter\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\Node\Expression\Test\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\Node\Expression\Unary\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\Profiler\Dumper\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\Profiler\NodeVisitor\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\Profiler\Node\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\RuntimeLoader\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\Sandbox\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\TokenParser\" />
+    <Folder Include="Tools\phpmyadmin\vendor\twig\twig\src\Util\" />
+    <Folder Include="Tools\phpmyadmin\vendor\williamdes\mariadb-mysql-kbs\dist\" />
+    <Folder Include="Tools\phpmyadmin\vendor\williamdes\mariadb-mysql-kbs\src\" />
+    <Folder Include="Tools\php\CompatInfo\Renderer\" />
+    <Folder Include="Tools\php\data\PEAR\" />
+    <Folder Include="Tools\php\data\phpdocref\apache\" />
+    <Folder Include="Tools\php\data\phpdocref\apc\" />
+    <Folder Include="Tools\php\data\phpdocref\apd\" />
+    <Folder Include="Tools\php\data\phpdocref\bcmath\" />
+    <Folder Include="Tools\php\data\phpdocref\bzip2\" />
+    <Folder Include="Tools\php\data\phpdocref\com\" />
+    <Folder Include="Tools\php\data\phpdocref\ctype\" />
+    <Folder Include="Tools\php\data\phpdocref\datetime\" />
+    <Folder Include="Tools\php\data\phpdocref\dom\" />
+    <Folder Include="Tools\php\data\phpdocref\filter\" />
+    <Folder Include="Tools\php\data\phpdocref\ftp\" />
+    <Folder Include="Tools\php\data\phpdocref\gmp\" />
+    <Folder Include="Tools\php\data\phpdocref\hash\" />
+    <Folder Include="Tools\php\data\phpdocref\iconv\" />
+    <Folder Include="Tools\php\data\phpdocref\image\" />
+    <Folder Include="Tools\php\data\phpdocref\json\" />
+    <Folder Include="Tools\php\data\phpdocref\mbstring\" />
+    <Folder Include="Tools\php\data\phpdocref\mysqli\" />
+    <Folder Include="Tools\php\data\phpdocref\mysql\" />
+    <Folder Include="Tools\php\data\phpdocref\openssl\" />
+    <Folder Include="Tools\php\data\phpdocref\pcre\" />
+    <Folder Include="Tools\php\data\phpdocref\pdo\" />
+    <Folder Include="Tools\php\data\phpdocref\pgsql\" />
+    <Folder Include="Tools\php\data\phpdocref\posix\" />
+    <Folder Include="Tools\php\data\phpdocref\session\" />
+    <Folder Include="Tools\php\data\phpdocref\simplexml\" />
+    <Folder Include="Tools\php\data\phpdocref\spl\" />
+    <Folder Include="Tools\php\data\phpdocref\ssh2\" />
+    <Folder Include="Tools\php\data\phpdocref\tidy\" />
+    <Folder Include="Tools\php\data\phpdocref\wddx\" />
+    <Folder Include="Tools\php\data\phpdocref\xmlreader\" />
+    <Folder Include="Tools\php\data\phpdocref\xmlwriter\" />
+    <Folder Include="Tools\php\data\phpdocref\xml\" />
+    <Folder Include="Tools\php\data\phpdocref\xslt\" />
+    <Folder Include="Tools\php\data\phpdocref\xsl\" />
+    <Folder Include="Tools\php\data\phpdocref\zip\" />
+    <Folder Include="Tools\php\data\phpdocref\zlib\" />
+    <Folder Include="Tools\php\dev\" />
+    <Folder Include="Tools\php\extras\fonts\fdb\" />
+    <Folder Include="Tools\php\extras\fonts\fft\" />
+    <Folder Include="Tools\php\extras\fonts\ps\" />
+    <Folder Include="Tools\php\extras\fonts\ttf\" />
+    <Folder Include="Tools\php\extras\mibs\" />
+    <Folder Include="Tools\php\extras\openssl\" />
+    <Folder Include="Tools\php\extras\ssl\" />
+    <Folder Include="Tools\php\ext\" />
+    <Folder Include="Tools\php\lib\enchant\" />
+    <Folder Include="Tools\php\pear\.channels\.alias\" />
+    <Folder Include="Tools\php\pear\.registry\" />
+    <Folder Include="Tools\php\pear\adodb\contrib\" />
+    <Folder Include="Tools\php\pear\adodb\cute_icons_for_site\" />
+    <Folder Include="Tools\php\pear\adodb\datadict\" />
+    <Folder Include="Tools\php\pear\adodb\docs\" />
+    <Folder Include="Tools\php\pear\adodb\drivers\" />
+    <Folder Include="Tools\php\pear\adodb\lang\" />
+    <Folder Include="Tools\php\pear\adodb\pear\Auth\Container\" />
+    <Folder Include="Tools\php\pear\adodb\perf\" />
+    <Folder Include="Tools\php\pear\adodb\session\old\" />
+    <Folder Include="Tools\php\pear\adodb\tests\" />
+    <Folder Include="Tools\php\pear\adodb\xsl\" />
+    <Folder Include="Tools\php\pear\Archive\" />
+    <Folder Include="Tools\php\pear\Console\" />
+    <Folder Include="Tools\php\pear\docs\" />
+    <Folder Include="Tools\php\pear\Event\" />
+    <Folder Include="Tools\php\pear\examples\" />
+    <Folder Include="Tools\php\pear\File\Iterator\" />
+    <Folder Include="Tools\php\pear\File\Passwd\" />
+    <Folder Include="Tools\php\pear\File\PDF\fonts\" />
+    <Folder Include="Tools\php\pear\OS\" />
+    <Folder Include="Tools\php\pear\PEAR\ChannelFile\" />
+    <Folder Include="Tools\php\pear\PEAR\Command\" />
+    <Folder Include="Tools\php\pear\PEAR\Downloader\" />
+    <Folder Include="Tools\php\pear\PEAR\Frontend\" />
+    <Folder Include="Tools\php\pear\PEAR\Installer\Role\" />
+    <Folder Include="Tools\php\pear\PEAR\PackageFile\Generator\" />
+    <Folder Include="Tools\php\pear\PEAR\PackageFile\Parser\" />
+    <Folder Include="Tools\php\pear\PEAR\PackageFile\v2\" />
+    <Folder Include="Tools\php\pear\PEAR\REST\" />
+    <Folder Include="Tools\php\pear\PEAR\Task\Postinstallscript\" />
+    <Folder Include="Tools\php\pear\PEAR\Task\Replace\" />
+    <Folder Include="Tools\php\pear\PEAR\Task\Unixeol\" />
+    <Folder Include="Tools\php\pear\PEAR\Task\Windowseol\" />
+    <Folder Include="Tools\php\pear\PEAR\Validator\" />
+    <Folder Include="Tools\php\pear\PHPUnit2\Extensions\" />
+    <Folder Include="Tools\php\pear\PHPUnit2\Framework\" />
+    <Folder Include="Tools\php\pear\PHPUnit2\Runner\" />
+    <Folder Include="Tools\php\pear\PHPUnit2\TextUI\" />
+    <Folder Include="Tools\php\pear\PHPUnit2\Util\CodeCoverage\Renderer\" />
+    <Folder Include="Tools\php\pear\PHPUnit2\Util\Log\" />
+    <Folder Include="Tools\php\pear\PHPUnit2\Util\TestDox\ResultPrinter\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Extensions\PhptTestCase\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Framework\Assert\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Framework\Comparator\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Framework\Constraint\JsonMatches\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Framework\Error\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Framework\MockObject\Builder\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Framework\MockObject\Generator\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Framework\MockObject\Invocation\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Framework\MockObject\Matcher\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Framework\MockObject\Stub\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Framework\Process\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Framework\TestSuite\" />
+    <Folder Include="Tools\php\pear\PHPUnit\GUI\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Runner\" />
+    <Folder Include="Tools\php\pear\PHPUnit\TextUI\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Util\DeprecatedFeature\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Util\Log\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Util\PHP\" />
+    <Folder Include="Tools\php\pear\PHPUnit\Util\TestDox\ResultPrinter\" />
+    <Folder Include="Tools\php\pear\PHP\CodeCoverage\Driver\" />
+    <Folder Include="Tools\php\pear\PHP\CodeCoverage\Report\HTML\Renderer\Template\css\" />
+    <Folder Include="Tools\php\pear\PHP\CodeCoverage\Report\HTML\Renderer\Template\img\" />
+    <Folder Include="Tools\php\pear\PHP\CodeCoverage\Report\HTML\Renderer\Template\js\" />
+    <Folder Include="Tools\php\pear\PHP\CodeCoverage\Report\Node\" />
+    <Folder Include="Tools\php\pear\PHP\CodeCoverage\Util\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\CommentParser\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\DocGenerators\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Reports\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Docs\Files\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Docs\Formatting\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Docs\Functions\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Docs\NamingConventions\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Docs\PHP\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\Classes\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\CodeAnalysis\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\Commenting\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\ControlStructures\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\Debug\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\Files\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\Formatting\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\Functions\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\Metrics\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\NamingConventions\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\PHP\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\Strings\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\VersionControl\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Generic\Sniffs\WhiteSpace\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\MySource\Sniffs\Channels\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\MySource\Sniffs\Commenting\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\MySource\Sniffs\CSS\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\MySource\Sniffs\Debug\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\MySource\Sniffs\Objects\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\MySource\Sniffs\PHP\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\MySource\Sniffs\Strings\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\PEAR\Docs\Files\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\PEAR\Docs\Functions\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\PEAR\Docs\NamingConventions\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\PEAR\Sniffs\Classes\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\PEAR\Sniffs\Commenting\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\PEAR\Sniffs\ControlStructures\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\PEAR\Sniffs\Files\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\PEAR\Sniffs\Formatting\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\PEAR\Sniffs\Functions\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\PEAR\Sniffs\NamingConventions\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\PEAR\Sniffs\WhiteSpace\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\PHPCS\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Docs\Arrays\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\Arrays\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\Classes\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\CodeAnalysis\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\Commenting\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\ControlStructures\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\CSS\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\Debug\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\Files\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\Formatting\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\Functions\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\NamingConventions\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\Objects\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\Operators\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\PHP\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\Scope\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\Strings\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Zend\Sniffs\Debug\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Zend\Sniffs\Files\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Standards\Zend\Sniffs\NamingConventions\" />
+    <Folder Include="Tools\php\pear\PHP\CodeSniffer\Tokenizers\" />
+    <Folder Include="Tools\php\pear\PHP\CompatInfo\Renderer\" />
+    <Folder Include="Tools\php\pear\PHP\Compat\Constant\" />
+    <Folder Include="Tools\php\pear\PHP\Compat\Function\" />
+    <Folder Include="Tools\php\pear\PHP\Debug\Renderer\HTML\" />
+    <Folder Include="Tools\php\pear\PHP\Timer\" />
+    <Folder Include="Tools\php\pear\PHP\Token\Stream\" />
+    <Folder Include="Tools\php\pear\PHP\UML\Input\PHP\" />
+    <Folder Include="Tools\php\pear\PHP\UML\Input\XMI\" />
+    <Folder Include="Tools\php\pear\PHP\UML\Metamodel\" />
+    <Folder Include="Tools\php\pear\PHP\UML\Output\Eclipse\" />
+    <Folder Include="Tools\php\pear\PHP\UML\Output\HtmlNew\%24resources\" />
+    <Folder Include="Tools\php\pear\PHP\UML\Output\HtmlNew\templates\" />
+    <Folder Include="Tools\php\pear\PHP\UML\Output\Html\resources\" />
+    <Folder Include="Tools\php\pear\PHP\UML\Output\Php\templates\" />
+    <Folder Include="Tools\php\pear\PHP\UML\Output\Xmi\" />
+    <Folder Include="Tools\php\pear\Structures\Graph\Manipulator\" />
+    <Folder Include="Tools\php\pear\Table\" />
+    <Folder Include="Tools\php\pear\tests\" />
+    <Folder Include="Tools\php\pear\Text\Diff\Engine\" />
+    <Folder Include="Tools\php\pear\Text\Diff\Renderer\" />
+    <Folder Include="Tools\php\pear\Text\Template\" />
+    <Folder Include="Tools\php\pear\Text\Wiki\Parse\Default\" />
+    <Folder Include="Tools\php\pear\Text\Wiki\Render\Latex\" />
+    <Folder Include="Tools\php\pear\Text\Wiki\Render\Plain\" />
+    <Folder Include="Tools\php\pear\Text\Wiki\Render\Xhtml\" />
+    <Folder Include="Tools\php\pear\XML\" />
+    <Folder Include="Tools\php\scripts\" />
+    <Folder Include="Tools\php\tests\beehiveforum082\forum\include\" />
+    <Folder Include="Tools\php\tests\Console_Getopt\tests\" />
+    <Folder Include="Tools\php\tests\emptyDir\" />
+    <Folder Include="Tools\php\tests\kohana22\modules\gmaps\" />
+    <Folder Include="Tools\php\tests\parseDir\PHP5\" />
+    <Folder Include="Tools\php\tests\parseFile\" />
+    <Folder Include="Tools\php\tests\Structures_Graph\tests\" />
+    <Folder Include="Tools\php\tests\XML_Util\tests\" />
+    <Folder Include="Tools\tmp\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>:: Delete language folders
+RD /S /Q "$(TargetDir)de"
+RD /S /Q "$(TargetDir)es"
+RD /S /Q "$(TargetDir)ja"
+RD /S /Q "$(TargetDir)ru"
+
+:: Delete XMLs
+del "$(TargetDir)*.xml"
+
+:: Move DLLs to Bin
+ROBOCOPY "$(TargetDir) " "$(TargetDir)Libs\ " *.dll /IS /MOVE
+
+; if %25errorlevel%25 leq 4 exit 0 else exit %25errorlevel%25</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

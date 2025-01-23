@@ -1,4 +1,4 @@
-# Knapp WAMP
+# Aethereon Server
  
 This tool contains a portable instance of the following programs, ready to use:
 
